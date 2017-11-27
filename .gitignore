@@ -1,0 +1,6 @@
+*.pyc
+celerybeat-schedule.db
+db.sqlite3
+.DS_Store
+storage/
+local_settings.py
