@@ -1,0 +1,5 @@
+{% extends "project/base.html" %}
+
+{% block page_content %}
+    Email Validation was sent to {{ request.session.email_validation_address }}
+{% endblock %}

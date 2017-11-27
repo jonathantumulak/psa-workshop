@@ -1,0 +1,6 @@
+{% extends "project/base.html" %}
+
+{% block page_content %}
+    Welcome! {{ user.username }}
+    <a href="{% url "logout" %}">Logout</a>
+{% endblock %}
