@@ -27,3 +27,7 @@ class FeedView(LoginRequiredMixin, TemplateView):
         ctx = super(FeedView, self).get_context_data(**kwargs)
         ctx['user'] = self.request.user
         return ctx
+
+
+class EmailSent(TemplateView):
+    template_name = 'project/email_sent.html'

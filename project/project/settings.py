@@ -137,6 +137,9 @@ SOCIAL_AUTH_PIPELINE = (
     'social_core.pipeline.social_auth.social_uid',
     'social_core.pipeline.social_auth.auth_allowed',
     'social_core.pipeline.social_auth.social_user',
+
+    'social_core.pipeline.mail.mail_validation',
+
     'social_core.pipeline.user.get_username',
     'social_core.pipeline.user.create_user',
     'social_core.pipeline.social_auth.associate_user',
@@ -158,6 +161,12 @@ SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
     'fields': 'id, first_name, last_name, name, email',
 }
 SOCIAL_AUTH_USER_FIELDS = ['username', 'email', 'first_name', 'last_name']
+
+
+SOCIAL_AUTH_FORCE_EMAIL_VALIDATION = True
+EMAIL_VALIDATION_URL = 'email-sent'
+SOCIAL_AUTH_EMAIL_VALIDATION_FUNCTION = 'project.pipelines.send_email_verification'
+SOCIAL_AUTH_PASSWORDLESS = False
 
 
 try:
